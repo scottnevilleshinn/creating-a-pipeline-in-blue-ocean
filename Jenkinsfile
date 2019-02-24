@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
-        sh 'sh \'env | sort\''
+        sh 'env | sort'
       }
     }
     stage('Test') {
