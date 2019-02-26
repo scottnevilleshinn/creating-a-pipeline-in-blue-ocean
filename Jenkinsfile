@@ -1,15 +1,15 @@
 pipeline {
   agent {
     docker {
-      image 'node:6-alpine'
       args '-p 3000:3000'
+      image 'docker.housescans.sfcoders.net:5000/base_python3.7:latest'
     }
 
   }
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'ls'
         sh 'env | sort'
       }
     }
