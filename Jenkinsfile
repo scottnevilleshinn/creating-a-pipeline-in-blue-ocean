@@ -1,15 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      args '-p 3000:3000'
-      image 'docker.housescans.sfcoders.net:5000/base_python3.7:latest'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       steps {
-        sh 'ls'
+        sh 'docker pull docker.housescans.sfcoders.net:5000/base_python3.7:latest'
         sh 'env | sort'
       }
     }
